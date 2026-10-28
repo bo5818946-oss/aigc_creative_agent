@@ -1,0 +1,1650 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-23T03:38:14+00:00",
+  "python_version": "3.13.3",
+  "mode": "确定性工具 + 脚本化 FakeLLM；不调用真实 DeepSeek API",
+  "metrics": {
+    "total_cases": 20,
+    "suite_passed": 20,
+    "suite_failed": 0,
+    "suite_pass_rate": 1.0,
+    "workflow_cases": 17,
+    "deterministic_cases": 8,
+    "fake_llm_cases": 9,
+    "tool_cases": 3,
+    "status_counts": {
+      "completed": 13,
+      "validation_failed": 1,
+      "failed": 3,
+      "tool": 3
+    },
+    "first_pass_cases": 9,
+    "first_pass_rate": 0.5294117647058824,
+    "recovered_cases": 4,
+    "revision_cases": 6,
+    "recovery_rate": 0.6666666666666666,
+    "valid_revision_cases": 5,
+    "content_recovery_rate": 0.8,
+    "validation_failed_cases": 1,
+    "early_failed_cases": 3,
+    "intentional_failure_cases": 4,
+    "avg_revisions": 0.4117647058823529,
+    "total_revisions": 7,
+    "llm_calls": 30,
+    "llm_tokens": 900,
+    "check_failures": {
+      "duration": 0,
+      "scene": 2,
+      "consistency": 0,
+      "prompt": 0
+    },
+    "revision_reason_categories": {
+      "时长": 1,
+      "场景覆盖": 2,
+      "一致性 / 方向": 1,
+      "提示词 / 动作": 1,
+      "修正执行异常": 1
+    },
+    "persistence_ok_cases": 17,
+    "avg_duration_ms": 92.98058999984278,
+    "p95_duration_ms": 114.26419999952486,
+    "total_duration_ms": 1876.78
+  },
+  "export_verification": {
+    "passed": true,
+    "file_count": 4,
+    "json_valid": true,
+    "markdown_sections_present": true,
+    "unique_files": true,
+    "project_id": "d6f179d1f4cc4bcca6559ca6e379b7da",
+    "json_file": "30秒汽车品牌广告_d6f179d1_20261023_113814.json",
+    "markdown_file": "30秒汽车品牌广告_d6f179d1_20261023_113814.md"
+  },
+  "security_check": {
+    "passed": true,
+    "secret_like_match_count": 0,
+    "llm_mode": "scripted_fake_llm",
+    "real_api_calls": 0
+  },
+  "cases": [
+    {
+      "case": {
+        "case_id": "det-01",
+        "name": "30 秒汽车广告确定性基线",
+        "category": "happy_path",
+        "kind": "workflow_deterministic",
+        "description": "五场景、30 秒，验证确定性分镜、提示词和四类校验一次通过。",
+        "max_revisions": 2,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "completed",
+          "revision_count": 0,
+          "validation_passed": true,
+          "check_results": {
+            "duration": true,
+            "scene": true,
+            "consistency": true,
+            "prompt": true
+          },
+          "llm_calls": 0,
+          "error_contains": [],
+          "revision_reason_contains": [],
+          "revision_statuses": [],
+          "warning_count_min": null,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [],
+          "tool_passed": null,
+          "tool_error_contains": [],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "det-01",
+        "kind": "workflow_deterministic",
+        "duration_ms": 112.65,
+        "final_status": "completed",
+        "revision_count": 0,
+        "validation_passed": true,
+        "check_results": {
+          "duration": true,
+          "scene": true,
+          "consistency": true,
+          "prompt": true
+        },
+        "llm_calls": 0,
+        "llm_tokens": 0,
+        "errors": [],
+        "warnings": [],
+        "persisted_status": "completed",
+        "trace_nodes": [
+          "analyze_requirements",
+          "plan_workflow",
+          "generate_storyboard",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "write_director_prompt",
+          "finalize_result"
+        ],
+        "revision_statuses": [],
+        "revision_reasons": [],
+        "pending_confirmations": [],
+        "warning_count": 0,
+        "tool_passed": null,
+        "tool_errors": [],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": "d6f179d1f4cc4bcca6559ca6e379b7da"
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "det-02",
+        "name": "15 秒三场景非车辆主体",
+        "category": "happy_path",
+        "kind": "workflow_deterministic",
+        "description": "短时长、非车辆主体，验证时长切分与主体一致性检查。",
+        "max_revisions": 2,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "completed",
+          "revision_count": 0,
+          "validation_passed": true,
+          "check_results": {
+            "duration": true,
+            "scene": true,
+            "consistency": true,
+            "prompt": true
+          },
+          "llm_calls": 0,
+          "error_contains": [],
+          "revision_reason_contains": [],
+          "revision_statuses": [],
+          "warning_count_min": null,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [],
+          "tool_passed": null,
+          "tool_error_contains": [],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "det-02",
+        "kind": "workflow_deterministic",
+        "duration_ms": 108.74,
+        "final_status": "completed",
+        "revision_count": 0,
+        "validation_passed": true,
+        "check_results": {
+          "duration": true,
+          "scene": true,
+          "consistency": true,
+          "prompt": true
+        },
+        "llm_calls": 0,
+        "llm_tokens": 0,
+        "errors": [],
+        "warnings": [],
+        "persisted_status": "completed",
+        "trace_nodes": [
+          "analyze_requirements",
+          "plan_workflow",
+          "generate_storyboard",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "write_director_prompt",
+          "finalize_result"
+        ],
+        "revision_statuses": [],
+        "revision_reasons": [],
+        "pending_confirmations": [],
+        "warning_count": 0,
+        "tool_passed": null,
+        "tool_errors": [],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": "339b317a7e704791a9298e4a7ed18d67"
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "det-03",
+        "name": "60 秒六场景旅行短片",
+        "category": "happy_path",
+        "kind": "workflow_deterministic",
+        "description": "长时长与六场景，验证边界时长和场景覆盖。",
+        "max_revisions": 2,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "completed",
+          "revision_count": 0,
+          "validation_passed": true,
+          "check_results": {
+            "duration": true,
+            "scene": true,
+            "consistency": true,
+            "prompt": true
+          },
+          "llm_calls": 0,
+          "error_contains": [],
+          "revision_reason_contains": [],
+          "revision_statuses": [],
+          "warning_count_min": null,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [],
+          "tool_passed": null,
+          "tool_error_contains": [],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "det-03",
+        "kind": "workflow_deterministic",
+        "duration_ms": 106.19,
+        "final_status": "completed",
+        "revision_count": 0,
+        "validation_passed": true,
+        "check_results": {
+          "duration": true,
+          "scene": true,
+          "consistency": true,
+          "prompt": true
+        },
+        "llm_calls": 0,
+        "llm_tokens": 0,
+        "errors": [],
+        "warnings": [],
+        "persisted_status": "completed",
+        "trace_nodes": [
+          "analyze_requirements",
+          "plan_workflow",
+          "generate_storyboard",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "write_director_prompt",
+          "finalize_result"
+        ],
+        "revision_statuses": [],
+        "revision_reasons": [],
+        "pending_confirmations": [],
+        "warning_count": 0,
+        "tool_passed": null,
+        "tool_errors": [],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": "f237644d873a426dbfd2cc18c9515500"
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "det-04",
+        "name": "10 秒单场景产品特写",
+        "category": "happy_path",
+        "kind": "workflow_deterministic",
+        "description": "单场景、短时长，验证最小场景集合。",
+        "max_revisions": 2,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "completed",
+          "revision_count": 0,
+          "validation_passed": true,
+          "check_results": {
+            "duration": true,
+            "scene": true,
+            "consistency": true,
+            "prompt": true
+          },
+          "llm_calls": 0,
+          "error_contains": [],
+          "revision_reason_contains": [],
+          "revision_statuses": [],
+          "warning_count_min": null,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [],
+          "tool_passed": null,
+          "tool_error_contains": [],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "det-04",
+        "kind": "workflow_deterministic",
+        "duration_ms": 109.59,
+        "final_status": "completed",
+        "revision_count": 0,
+        "validation_passed": true,
+        "check_results": {
+          "duration": true,
+          "scene": true,
+          "consistency": true,
+          "prompt": true
+        },
+        "llm_calls": 0,
+        "llm_tokens": 0,
+        "errors": [],
+        "warnings": [],
+        "persisted_status": "completed",
+        "trace_nodes": [
+          "analyze_requirements",
+          "plan_workflow",
+          "generate_storyboard",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "write_director_prompt",
+          "finalize_result"
+        ],
+        "revision_statuses": [],
+        "revision_reasons": [],
+        "pending_confirmations": [],
+        "warning_count": 0,
+        "tool_passed": null,
+        "tool_errors": [],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": "00420822a7134b02a4486dd91eeda3b5"
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "det-05",
+        "name": "缺失场景清单时使用安全默认值",
+        "category": "input_default",
+        "kind": "workflow_deterministic",
+        "description": "需求未提供场景，Pydantic 补占位场景并记录待确认项。",
+        "max_revisions": 2,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "completed",
+          "revision_count": 0,
+          "validation_passed": true,
+          "check_results": {
+            "duration": true,
+            "scene": true,
+            "consistency": true,
+            "prompt": true
+          },
+          "llm_calls": 0,
+          "error_contains": [],
+          "revision_reason_contains": [],
+          "revision_statuses": [],
+          "warning_count_min": null,
+          "pending_confirmation_min": 1,
+          "forbidden_trace_nodes": [],
+          "tool_passed": null,
+          "tool_error_contains": [],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "det-05",
+        "kind": "workflow_deterministic",
+        "duration_ms": 107.69,
+        "final_status": "completed",
+        "revision_count": 0,
+        "validation_passed": true,
+        "check_results": {
+          "duration": true,
+          "scene": true,
+          "consistency": true,
+          "prompt": true
+        },
+        "llm_calls": 0,
+        "llm_tokens": 0,
+        "errors": [],
+        "warnings": [
+          "镜头时长 12 秒超过 通用视频模型 单镜头建议上限 10 秒。"
+        ],
+        "persisted_status": "completed",
+        "trace_nodes": [
+          "analyze_requirements",
+          "plan_workflow",
+          "generate_storyboard",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "write_director_prompt",
+          "finalize_result"
+        ],
+        "revision_statuses": [],
+        "revision_reasons": [],
+        "pending_confirmations": [
+          "未提供场景清单，已使用占位场景，需用户确认。"
+        ],
+        "warning_count": 1,
+        "tool_passed": null,
+        "tool_errors": [],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": "1814eb567d67402a8a647bdc897ad18c"
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "det-06",
+        "name": "缺失一致性约束时使用安全默认值",
+        "category": "input_default",
+        "kind": "workflow_deterministic",
+        "description": "需求未提供一致性约束，系统补通用约束并记录待确认项。",
+        "max_revisions": 2,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "completed",
+          "revision_count": 0,
+          "validation_passed": true,
+          "check_results": {
+            "duration": true,
+            "scene": true,
+            "consistency": true,
+            "prompt": true
+          },
+          "llm_calls": 0,
+          "error_contains": [],
+          "revision_reason_contains": [],
+          "revision_statuses": [],
+          "warning_count_min": null,
+          "pending_confirmation_min": 1,
+          "forbidden_trace_nodes": [],
+          "tool_passed": null,
+          "tool_error_contains": [],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "det-06",
+        "kind": "workflow_deterministic",
+        "duration_ms": 111.83,
+        "final_status": "completed",
+        "revision_count": 0,
+        "validation_passed": true,
+        "check_results": {
+          "duration": true,
+          "scene": true,
+          "consistency": true,
+          "prompt": true
+        },
+        "llm_calls": 0,
+        "llm_tokens": 0,
+        "errors": [],
+        "warnings": [],
+        "persisted_status": "completed",
+        "trace_nodes": [
+          "analyze_requirements",
+          "plan_workflow",
+          "generate_storyboard",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "write_director_prompt",
+          "finalize_result"
+        ],
+        "revision_statuses": [],
+        "revision_reasons": [],
+        "pending_confirmations": [
+          "未提供主体一致性约束，已使用通用约束，需用户确认。"
+        ],
+        "warning_count": 0,
+        "tool_passed": null,
+        "tool_errors": [],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": "8ac9a1dc107a44a8bdf2640ce75a7095"
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "det-07",
+        "name": "非车辆主体的四场景产品广告",
+        "category": "happy_path",
+        "kind": "workflow_deterministic",
+        "description": "智能手表主体，验证非车辆路径不误报方向问题。",
+        "max_revisions": 2,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "completed",
+          "revision_count": 0,
+          "validation_passed": true,
+          "check_results": {
+            "duration": true,
+            "scene": true,
+            "consistency": true,
+            "prompt": true
+          },
+          "llm_calls": 0,
+          "error_contains": [],
+          "revision_reason_contains": [],
+          "revision_statuses": [],
+          "warning_count_min": null,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [],
+          "tool_passed": null,
+          "tool_error_contains": [],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "det-07",
+        "kind": "workflow_deterministic",
+        "duration_ms": 113.02,
+        "final_status": "completed",
+        "revision_count": 0,
+        "validation_passed": true,
+        "check_results": {
+          "duration": true,
+          "scene": true,
+          "consistency": true,
+          "prompt": true
+        },
+        "llm_calls": 0,
+        "llm_tokens": 0,
+        "errors": [],
+        "warnings": [],
+        "persisted_status": "completed",
+        "trace_nodes": [
+          "analyze_requirements",
+          "plan_workflow",
+          "generate_storyboard",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "write_director_prompt",
+          "finalize_result"
+        ],
+        "revision_statuses": [],
+        "revision_reasons": [],
+        "pending_confirmations": [],
+        "warning_count": 0,
+        "tool_passed": null,
+        "tool_errors": [],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": "1cce5a46a15a4548a824d7cbe87f88ef"
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "det-08",
+        "name": "Runway 目标模型仅产生警告",
+        "category": "model_profile",
+        "kind": "workflow_deterministic",
+        "description": "英文偏好模型产生语言警告，但不应把警告伪装成错误或触发修正。",
+        "max_revisions": 2,
+        "target_video_model": "runway",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "completed",
+          "revision_count": 0,
+          "validation_passed": true,
+          "check_results": {
+            "duration": true,
+            "scene": true,
+            "consistency": true,
+            "prompt": true
+          },
+          "llm_calls": 0,
+          "error_contains": [],
+          "revision_reason_contains": [],
+          "revision_statuses": [],
+          "warning_count_min": 5,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [],
+          "tool_passed": null,
+          "tool_error_contains": [],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "det-08",
+        "kind": "workflow_deterministic",
+        "duration_ms": 114.26,
+        "final_status": "completed",
+        "revision_count": 0,
+        "validation_passed": true,
+        "check_results": {
+          "duration": true,
+          "scene": true,
+          "consistency": true,
+          "prompt": true
+        },
+        "llm_calls": 0,
+        "llm_tokens": 0,
+        "errors": [],
+        "warnings": [
+          "目标模型 Runway Gen-4.x 偏好英文，当前提示词包含中文；后续需要模型方言转换。",
+          "目标模型 Runway Gen-4.x 偏好英文，当前提示词包含中文；后续需要模型方言转换。",
+          "目标模型 Runway Gen-4.x 偏好英文，当前提示词包含中文；后续需要模型方言转换。",
+          "目标模型 Runway Gen-4.x 偏好英文，当前提示词包含中文；后续需要模型方言转换。",
+          "目标模型 Runway Gen-4.x 偏好英文，当前提示词包含中文；后续需要模型方言转换。"
+        ],
+        "persisted_status": "completed",
+        "trace_nodes": [
+          "analyze_requirements",
+          "plan_workflow",
+          "generate_storyboard",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "write_director_prompt",
+          "finalize_result"
+        ],
+        "revision_statuses": [],
+        "revision_reasons": [],
+        "pending_confirmations": [],
+        "warning_count": 5,
+        "tool_passed": null,
+        "tool_errors": [],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": "8b4306e53d494fe68369bcdf4e932b11"
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "llm-01",
+        "name": "LLM 分镜首次通过",
+        "category": "happy_path",
+        "kind": "workflow_fake_llm",
+        "description": "脚本化模型返回合法需求与分镜，四类校验一次通过。",
+        "max_revisions": 2,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "completed",
+          "revision_count": 0,
+          "validation_passed": true,
+          "check_results": {
+            "duration": true,
+            "scene": true,
+            "consistency": true,
+            "prompt": true
+          },
+          "llm_calls": 3,
+          "error_contains": [],
+          "revision_reason_contains": [],
+          "revision_statuses": [],
+          "warning_count_min": null,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [],
+          "tool_passed": null,
+          "tool_error_contains": [],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "llm-01",
+        "kind": "workflow_fake_llm",
+        "duration_ms": 107.1,
+        "final_status": "completed",
+        "revision_count": 0,
+        "validation_passed": true,
+        "check_results": {
+          "duration": true,
+          "scene": true,
+          "consistency": true,
+          "prompt": true
+        },
+        "llm_calls": 3,
+        "llm_tokens": 90,
+        "errors": [],
+        "warnings": [],
+        "persisted_status": "completed",
+        "trace_nodes": [
+          "analyze_requirements",
+          "plan_workflow",
+          "generate_storyboard",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "write_director_prompt",
+          "finalize_result"
+        ],
+        "revision_statuses": [],
+        "revision_reasons": [],
+        "pending_confirmations": [],
+        "warning_count": 0,
+        "tool_passed": null,
+        "tool_errors": [],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": "9408d8f04cb64ee397aa47f6704266ca"
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "llm-02",
+        "name": "LLM 时长不足后修正一次",
+        "category": "duration",
+        "kind": "workflow_fake_llm",
+        "description": "初始分镜 24 秒，校验失败后模型修正到 30 秒。",
+        "max_revisions": 2,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "completed",
+          "revision_count": 1,
+          "validation_passed": true,
+          "check_results": {
+            "duration": true,
+            "scene": true,
+            "consistency": true,
+            "prompt": true
+          },
+          "llm_calls": 4,
+          "error_contains": [],
+          "revision_reason_contains": [
+            "总时长"
+          ],
+          "revision_statuses": [
+            "completed"
+          ],
+          "warning_count_min": null,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [],
+          "tool_passed": null,
+          "tool_error_contains": [],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "llm-02",
+        "kind": "workflow_fake_llm",
+        "duration_ms": 114.6,
+        "final_status": "completed",
+        "revision_count": 1,
+        "validation_passed": true,
+        "check_results": {
+          "duration": true,
+          "scene": true,
+          "consistency": true,
+          "prompt": true
+        },
+        "llm_calls": 4,
+        "llm_tokens": 120,
+        "errors": [],
+        "warnings": [],
+        "persisted_status": "completed",
+        "trace_nodes": [
+          "analyze_requirements",
+          "plan_workflow",
+          "generate_storyboard",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "revise_output",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "write_director_prompt",
+          "finalize_result"
+        ],
+        "revision_statuses": [
+          "completed"
+        ],
+        "revision_reasons": [
+          "总时长 24.00 秒，与目标 30.00 秒相差 6.00 秒，超出容差 0.50 秒。"
+        ],
+        "pending_confirmations": [],
+        "warning_count": 0,
+        "tool_passed": null,
+        "tool_errors": [],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": "4a7400d6fcc3409887e7752f79803f90"
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "llm-03",
+        "name": "LLM 缺失场景后修正一次",
+        "category": "scene_coverage",
+        "kind": "workflow_fake_llm",
+        "description": "初始分镜缺少雪地，场景校验失败后补回全部五场景。",
+        "max_revisions": 2,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "completed",
+          "revision_count": 1,
+          "validation_passed": true,
+          "check_results": {
+            "duration": true,
+            "scene": true,
+            "consistency": true,
+            "prompt": true
+          },
+          "llm_calls": 4,
+          "error_contains": [],
+          "revision_reason_contains": [
+            "缺少必需场景"
+          ],
+          "revision_statuses": [
+            "completed"
+          ],
+          "warning_count_min": null,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [],
+          "tool_passed": null,
+          "tool_error_contains": [],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "llm-03",
+        "kind": "workflow_fake_llm",
+        "duration_ms": 108.74,
+        "final_status": "completed",
+        "revision_count": 1,
+        "validation_passed": true,
+        "check_results": {
+          "duration": true,
+          "scene": true,
+          "consistency": true,
+          "prompt": true
+        },
+        "llm_calls": 4,
+        "llm_tokens": 120,
+        "errors": [],
+        "warnings": [],
+        "persisted_status": "completed",
+        "trace_nodes": [
+          "analyze_requirements",
+          "plan_workflow",
+          "generate_storyboard",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "revise_output",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "write_director_prompt",
+          "finalize_result"
+        ],
+        "revision_statuses": [
+          "completed"
+        ],
+        "revision_reasons": [
+          "缺少必需场景：雪地。"
+        ],
+        "pending_confirmations": [],
+        "warning_count": 0,
+        "tool_passed": null,
+        "tool_errors": [],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": "57f4694af7c248ce89067dc865ebe396"
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "llm-04",
+        "name": "LLM 方向矛盾后修正一次",
+        "category": "consistency",
+        "kind": "workflow_fake_llm",
+        "description": "初始第三个镜头反向行驶，一致性校验失败后统一方向。",
+        "max_revisions": 2,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "completed",
+          "revision_count": 1,
+          "validation_passed": true,
+          "check_results": {
+            "duration": true,
+            "scene": true,
+            "consistency": true,
+            "prompt": true
+          },
+          "llm_calls": 4,
+          "error_contains": [],
+          "revision_reason_contains": [
+            "相反"
+          ],
+          "revision_statuses": [
+            "completed"
+          ],
+          "warning_count_min": null,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [],
+          "tool_passed": null,
+          "tool_error_contains": [],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "llm-04",
+        "kind": "workflow_fake_llm",
+        "duration_ms": 108.05,
+        "final_status": "completed",
+        "revision_count": 1,
+        "validation_passed": true,
+        "check_results": {
+          "duration": true,
+          "scene": true,
+          "consistency": true,
+          "prompt": true
+        },
+        "llm_calls": 4,
+        "llm_tokens": 120,
+        "errors": [],
+        "warnings": [],
+        "persisted_status": "completed",
+        "trace_nodes": [
+          "analyze_requirements",
+          "plan_workflow",
+          "generate_storyboard",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "revise_output",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "write_director_prompt",
+          "finalize_result"
+        ],
+        "revision_statuses": [
+          "completed"
+        ],
+        "revision_reasons": [
+          "文本中的车辆水平运动方向出现相反（right: 镜头 [1, 2, 3, 4, 5]；left: 镜头 [3]），与“前进方向一致”的约束冲突。; screen_direction 出现相反（right: 镜头 [1, 2, 4, 5]；left: 镜头 [3]），与“前进方向一致”的约束冲突。"
+        ],
+        "pending_confirmations": [],
+        "warning_count": 0,
+        "tool_passed": null,
+        "tool_errors": [],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": "cb77f343e9484fde9d18b62d2d761072"
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "llm-05",
+        "name": "LLM 缺失动作后修正一次",
+        "category": "prompt_quality",
+        "kind": "workflow_fake_llm",
+        "description": "初始分镜没有动作描述，提示词校验失败后补齐动作链。",
+        "max_revisions": 2,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "completed",
+          "revision_count": 1,
+          "validation_passed": true,
+          "check_results": {
+            "duration": true,
+            "scene": true,
+            "consistency": true,
+            "prompt": true
+          },
+          "llm_calls": 4,
+          "error_contains": [],
+          "revision_reason_contains": [
+            "动作描述"
+          ],
+          "revision_statuses": [
+            "completed"
+          ],
+          "warning_count_min": null,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [],
+          "tool_passed": null,
+          "tool_error_contains": [],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "llm-05",
+        "kind": "workflow_fake_llm",
+        "duration_ms": 104.63,
+        "final_status": "completed",
+        "revision_count": 1,
+        "validation_passed": true,
+        "check_results": {
+          "duration": true,
+          "scene": true,
+          "consistency": true,
+          "prompt": true
+        },
+        "llm_calls": 4,
+        "llm_tokens": 120,
+        "errors": [],
+        "warnings": [],
+        "persisted_status": "completed",
+        "trace_nodes": [
+          "analyze_requirements",
+          "plan_workflow",
+          "generate_storyboard",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "revise_output",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "write_director_prompt",
+          "finalize_result"
+        ],
+        "revision_statuses": [
+          "completed"
+        ],
+        "revision_reasons": [
+          "镜头 1 缺少动作描述。; 镜头 2 缺少动作描述。; 镜头 3 缺少动作描述。; 镜头 4 缺少动作描述。; 镜头 5 缺少动作描述。"
+        ],
+        "pending_confirmations": [],
+        "warning_count": 0,
+        "tool_passed": null,
+        "tool_errors": [],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": "b35892174ad449178833b35576738e1a"
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "llm-06",
+        "name": "两次修正后仍缺场景，达到上限",
+        "category": "revision_limit",
+        "kind": "workflow_fake_llm",
+        "description": "两次修正都没有补回雪地，系统在第二次后停止并明确失败。",
+        "max_revisions": 2,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "validation_failed",
+          "revision_count": 2,
+          "validation_passed": false,
+          "check_results": {
+            "duration": true,
+            "scene": false,
+            "consistency": true,
+            "prompt": true
+          },
+          "llm_calls": 4,
+          "error_contains": [
+            "已达到自动修正上限 2 次"
+          ],
+          "revision_reason_contains": [
+            "缺少必需场景"
+          ],
+          "revision_statuses": [
+            "completed",
+            "completed"
+          ],
+          "warning_count_min": null,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [],
+          "tool_passed": null,
+          "tool_error_contains": [],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "llm-06",
+        "kind": "workflow_fake_llm",
+        "duration_ms": 112.93,
+        "final_status": "validation_failed",
+        "revision_count": 2,
+        "validation_passed": false,
+        "check_results": {
+          "duration": true,
+          "scene": false,
+          "consistency": true,
+          "prompt": true
+        },
+        "llm_calls": 4,
+        "llm_tokens": 120,
+        "errors": [
+          "校验未通过：缺少必需场景：雪地。",
+          "已达到自动修正上限 2 次，仍有未解决问题。"
+        ],
+        "warnings": [],
+        "persisted_status": "validation_failed",
+        "trace_nodes": [
+          "analyze_requirements",
+          "plan_workflow",
+          "generate_storyboard",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "revise_output",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "revise_output",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "finalize_result"
+        ],
+        "revision_statuses": [
+          "completed",
+          "completed"
+        ],
+        "revision_reasons": [
+          "缺少必需场景：雪地。",
+          "缺少必需场景：雪地。"
+        ],
+        "pending_confirmations": [],
+        "warning_count": 0,
+        "tool_passed": null,
+        "tool_errors": [],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": "0e68ea3f1ac841e1941bdb272a4d00b7"
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "llm-07",
+        "name": "LLM 返回非法分镜 JSON",
+        "category": "llm_output_error",
+        "kind": "workflow_fake_llm",
+        "description": "分镜响应不是 JSON：先带错误重试一次，仍非法则在分镜节点失败，不进入校验。",
+        "max_revisions": 2,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "failed",
+          "revision_count": 0,
+          "validation_passed": null,
+          "check_results": {},
+          "llm_calls": 3,
+          "error_contains": [
+            "分镜生成失败"
+          ],
+          "revision_reason_contains": [],
+          "revision_statuses": [],
+          "warning_count_min": null,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [
+            "validate_output"
+          ],
+          "tool_passed": null,
+          "tool_error_contains": [],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "llm-07",
+        "kind": "workflow_fake_llm",
+        "duration_ms": 106.43,
+        "final_status": "failed",
+        "revision_count": 0,
+        "validation_passed": null,
+        "check_results": {},
+        "llm_calls": 3,
+        "llm_tokens": 90,
+        "errors": [
+          "分镜生成失败：模型返回的不是有效 JSON 对象。响应摘要：这也不是 JSON"
+        ],
+        "warnings": [],
+        "persisted_status": "failed",
+        "trace_nodes": [
+          "analyze_requirements",
+          "plan_workflow",
+          "generate_storyboard",
+          "finalize_result"
+        ],
+        "revision_statuses": [],
+        "revision_reasons": [],
+        "pending_confirmations": [],
+        "warning_count": 0,
+        "tool_passed": null,
+        "tool_errors": [],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": "f9f3478cd0bc4e31aa32e7ca59d1fff9"
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "llm-08",
+        "name": "LLM 需求解析返回非法 JSON",
+        "category": "llm_output_error",
+        "kind": "workflow_fake_llm",
+        "description": "需求响应不是 JSON，系统在需求解析节点失败，不生成分镜。",
+        "max_revisions": 2,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "failed",
+          "revision_count": 0,
+          "validation_passed": null,
+          "check_results": {},
+          "llm_calls": 1,
+          "error_contains": [
+            "需求解析失败"
+          ],
+          "revision_reason_contains": [],
+          "revision_statuses": [],
+          "warning_count_min": null,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [
+            "generate_storyboard",
+            "validate_output"
+          ],
+          "tool_passed": null,
+          "tool_error_contains": [],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "llm-08",
+        "kind": "workflow_fake_llm",
+        "duration_ms": 104.58,
+        "final_status": "failed",
+        "revision_count": 0,
+        "validation_passed": null,
+        "check_results": {},
+        "llm_calls": 1,
+        "llm_tokens": 30,
+        "errors": [
+          "需求解析失败：模型返回的不是有效 JSON 对象。响应摘要：这不是 JSON"
+        ],
+        "warnings": [],
+        "persisted_status": "failed",
+        "trace_nodes": [
+          "analyze_requirements",
+          "finalize_result"
+        ],
+        "revision_statuses": [],
+        "revision_reasons": [],
+        "pending_confirmations": [],
+        "warning_count": 0,
+        "tool_passed": null,
+        "tool_errors": [],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": "318266fceb654fad83730e67deadad04"
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "llm-09",
+        "name": "LLM 修正响应非法",
+        "category": "llm_output_error",
+        "kind": "workflow_fake_llm",
+        "description": "初始场景缺失，修正响应不是 JSON，修正失败并停止。",
+        "max_revisions": 2,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "failed",
+          "revision_count": 1,
+          "validation_passed": false,
+          "check_results": {
+            "duration": true,
+            "scene": false,
+            "consistency": true,
+            "prompt": true
+          },
+          "llm_calls": 3,
+          "error_contains": [
+            "自动修正失败"
+          ],
+          "revision_reason_contains": [
+            "自动修正失败"
+          ],
+          "revision_statuses": [
+            "failed"
+          ],
+          "warning_count_min": null,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [],
+          "tool_passed": null,
+          "tool_error_contains": [],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "llm-09",
+        "kind": "workflow_fake_llm",
+        "duration_ms": 108.32,
+        "final_status": "failed",
+        "revision_count": 1,
+        "validation_passed": false,
+        "check_results": {
+          "duration": true,
+          "scene": false,
+          "consistency": true,
+          "prompt": true
+        },
+        "llm_calls": 3,
+        "llm_tokens": 90,
+        "errors": [
+          "自动修正失败：模型返回的不是有效 JSON 对象。响应摘要：这不是 JSON",
+          "校验未通过：缺少必需场景：雪地。",
+          "自动修正执行失败，已停止。"
+        ],
+        "warnings": [],
+        "persisted_status": "failed",
+        "trace_nodes": [
+          "analyze_requirements",
+          "plan_workflow",
+          "generate_storyboard",
+          "generate_prompts",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "validate_output",
+          "revise_output",
+          "finalize_result"
+        ],
+        "revision_statuses": [
+          "failed"
+        ],
+        "revision_reasons": [
+          "自动修正失败：模型返回的不是有效 JSON 对象。响应摘要：这不是 JSON"
+        ],
+        "pending_confirmations": [],
+        "warning_count": 0,
+        "tool_passed": null,
+        "tool_errors": [],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": "62ffac1ee68b41fb9d35a208b9759fad"
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "tool-01",
+        "name": "时长工具检测空档与重叠",
+        "category": "tool_precision",
+        "kind": "tool",
+        "description": "直接构造带 2 秒空档和 1 秒重叠的时间线。",
+        "max_revisions": 0,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "tool",
+          "revision_count": null,
+          "validation_passed": null,
+          "check_results": {},
+          "llm_calls": null,
+          "error_contains": [],
+          "revision_reason_contains": [],
+          "revision_statuses": [],
+          "warning_count_min": null,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [],
+          "tool_passed": false,
+          "tool_error_contains": [
+            "空档",
+            "重叠"
+          ],
+          "tool_warning_contains": []
+        }
+      },
+      "observation": {
+        "case_id": "tool-01",
+        "kind": "tool",
+        "duration_ms": 0.07,
+        "final_status": "tool",
+        "revision_count": 0,
+        "validation_passed": null,
+        "check_results": {},
+        "llm_calls": 0,
+        "llm_tokens": 0,
+        "errors": [],
+        "warnings": [],
+        "persisted_status": null,
+        "trace_nodes": [],
+        "revision_statuses": [],
+        "revision_reasons": [],
+        "pending_confirmations": [],
+        "warning_count": 0,
+        "tool_passed": false,
+        "tool_errors": [
+          "镜头 2之前存在 2.00 秒空档。",
+          "镜头 3与前一个镜头重叠 1.00 秒。"
+        ],
+        "tool_warnings": [],
+        "exception": null,
+        "project_id": null
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "tool-02",
+        "name": "场景工具检测缺失与重复",
+        "category": "tool_precision",
+        "kind": "tool",
+        "description": "缺少草原且森林重复出现，检查错误与警告是否分开。",
+        "max_revisions": 0,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "tool",
+          "revision_count": null,
+          "validation_passed": null,
+          "check_results": {},
+          "llm_calls": null,
+          "error_contains": [],
+          "revision_reason_contains": [],
+          "revision_statuses": [],
+          "warning_count_min": null,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [],
+          "tool_passed": false,
+          "tool_error_contains": [
+            "缺少必需场景：草原"
+          ],
+          "tool_warning_contains": [
+            "出现 2 次"
+          ]
+        }
+      },
+      "observation": {
+        "case_id": "tool-02",
+        "kind": "tool",
+        "duration_ms": 0.05,
+        "final_status": "tool",
+        "revision_count": 0,
+        "validation_passed": null,
+        "check_results": {},
+        "llm_calls": 0,
+        "llm_tokens": 0,
+        "errors": [],
+        "warnings": [],
+        "persisted_status": null,
+        "trace_nodes": [],
+        "revision_statuses": [],
+        "revision_reasons": [],
+        "pending_confirmations": [],
+        "warning_count": 1,
+        "tool_passed": false,
+        "tool_errors": [
+          "缺少必需场景：草原。"
+        ],
+        "tool_warnings": [
+          "场景“森林”出现 2 次，请确认是否为必要重复。"
+        ],
+        "exception": null,
+        "project_id": null
+      },
+      "mismatches": [],
+      "passed": true
+    },
+    {
+      "case": {
+        "case_id": "tool-03",
+        "name": "提示词工具检测冲突约束与多运镜",
+        "category": "tool_precision",
+        "kind": "tool",
+        "description": "同时包含胶片颗粒 + 4K 超清、固定机位 + 手持。",
+        "max_revisions": 0,
+        "target_video_model": "generic",
+        "duration_tolerance_seconds": 0.5,
+        "expected": {
+          "final_status": "tool",
+          "revision_count": null,
+          "validation_passed": null,
+          "check_results": {},
+          "llm_calls": null,
+          "error_contains": [],
+          "revision_reason_contains": [],
+          "revision_statuses": [],
+          "warning_count_min": null,
+          "pending_confirmation_min": null,
+          "forbidden_trace_nodes": [],
+          "tool_passed": false,
+          "tool_error_contains": [
+            "胶片颗粒"
+          ],
+          "tool_warning_contains": [
+            "多种运镜"
+          ]
+        }
+      },
+      "observation": {
+        "case_id": "tool-03",
+        "kind": "tool",
+        "duration_ms": 0.12,
+        "final_status": "tool",
+        "revision_count": 0,
+        "validation_passed": null,
+        "check_results": {},
+        "llm_calls": 0,
+        "llm_tokens": 0,
+        "errors": [],
+        "warnings": [],
+        "persisted_status": null,
+        "trace_nodes": [],
+        "revision_statuses": [],
+        "revision_reasons": [],
+        "pending_confirmations": [],
+        "warning_count": 1,
+        "tool_passed": false,
+        "tool_errors": [
+          "镜头 1：胶片颗粒 / 复古质感与 4K 超清 / 超锐利互相抵消。",
+          "镜头 1：固定机位与手持 / 甩镜 / 跟踪运动冲突。"
+        ],
+        "tool_warnings": [
+          "镜头 1：单个镜头中检测到多种运镜；建议一个镜头只保留一个主要运镜，否则生成稳定性会下降。"
+        ],
+        "exception": null,
+        "project_id": null
+      },
+      "mismatches": [],
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "脚本化 FakeLLM 验证的是工作流、校验和修正逻辑，不代表真实 DeepSeek 的创作质量。",
+    "真实 API 只通过可选的 pytest 测试单独验证，不在本报告的默认运行范围内。",
+    "20 条用例是课程项目的能力覆盖集，不是统计意义上的行业基准。",
+    "工具级用例直接测试检查器，不等同于端到端视频生成质量评测。",
+    "系统只生成结构化分镜和提示词，不生成图片或视频，因此没有视觉质量或审美评分。",
+    "确定性一致性检查只能核对声明和明显矛盾，不能证明最终视频中的主体外观完全一致。",
+    "英文偏好模型的提示词方言转换尚未实现，Runway 用例只验证“产生警告但不误判失败”。",
+    "耗时数据来自当前机器，受磁盘、Python 和系统负载影响，不是性能基准。"
+  ]
+}

@@ -1,0 +1,12 @@
+# Phase 1 core dependencies
+langgraph==1.2.16
+langchain-core==1.6.12
+pydantic==2.14.1
+python-dotenv==1.2.4
+pytest==9.1.1
+
+# Phase 2: DeepSeek uses the OpenAI-compatible SDK
+openai==3.35.1
+
+# Phase 2C: Streamlit workbench
+streamlit==1.66.0
